@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.模式(结构)匹配
+        // {}={};
+        // 2.属性名相同的完成赋值
+        // const { age: age, username: username } = {
+        //     username: 'Alex',
+        //     age: 18
+        // };
+        // console.log(age,username);
+        // 取别名
+        const {age:age,username:uname}={
+            username:'ZhangSan',age:19
+        };
+        console.log(age,uname);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.完成add函数
+        const add1=(...args)=>{
+            let sum=0;
+            for(let i=0;i<args.length;i++){
+                sum+=args[i];
+            }
+            return sum;
+        };
+        console.log(add1());
+        console.log(add1(1,2,3));
+        console.log(add1(1,1));
+        // 2.与解构赋值结合使用
+        // 剩余参数不一定非要作为函数参数使用
+        const [num,...args]=[1,2,3,4];
+        // 必须是最后一个
+        // const [...args,num]=[1,2,3];
+        console.log(num,args);
+        // 
+        const func=([num,...args])=>{};
+        func([1,2,3]);
+
+        // 与对象解构赋值的结合使用
+        const {x,y,...z}={a:1,x:1,y:3,b:5};
+        console.log(x,y,z);
+
+        // 
+        const fun=({x,y,...z})=>{};
+        fun({a:3,b:4,x:1,y:8});
+    </script>
+</body>
+</html>

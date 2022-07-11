@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <p></p>
+    <p></p>
+    <script>
+        // 1.复制数组
+        const a=[1,2];
+        const b=a;
+        a[0]=3;
+        console.log(b);
+        // 这个只能将a赋值给b,b并不是一个新的
+        const c=[...a];
+        a[1]=100;
+        console.log(a);
+        console.log(c);
+        // 2.合并数组
+        const x=[1,2];
+        const y=[3,11];
+        const z=[4];
+        console.log([...x,...y,...z]);
+        // 还可以加上其他的
+        console.log([1,...x,2,...y,3,...z]);
+        // 3.字符串转为数组
+        // 字符串可以按照数组的形式展开
+        console.log(...'alex');
+        console.log('a','l','e','x');
+        console.log([...'alex']);
+        // 转换为数组后可以使用数组的方法
+        // reverse
+        // 4.常见的类数组转化为数组
+        // arguments
+        function func(){
+            console.log(arguments.push);
+            console.log([...arguments]);
+        }
+        func(1,2);
+
+        // NodeList
+        console.log(document.querySelectorAll('p'));
+        console.log([...document.querySelectorAll('p')].push);
+
+    </script>
+</body>
+</html>

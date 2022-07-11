@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.全局作用域中this指向
+        console.log(this);    //window
+        // 2.一般函数(非箭头函数)中的this指向
+        // 'use strict';
+        function add1(){
+            console.log(this);
+        }
+        //严格模式就指向undefined
+        add1(); //undefined->window(非严格模式下)
+        // window.aad1();
+
+        const calc={
+            add2:add1
+        };
+        calc.add2();   //calc
+        const adder=calc.add2;
+        adder();     //undefined->window(非严格模式下)
+
+        // 只有在函数调用的时候this指向才确定,不调用的时候,不知道只想谁
+        // this指向和函数在哪儿调用没关系,只和谁在调用有关
+
+        // 3.箭头函数中的this指向
+        // 箭头函数没有自己的this
+        const func={
+            add:()=>{
+                console.log(this);
+            }
+        };
+        func.add();  //window
+
+        // 练习
+        const fun={
+            add:function(){
+                const adder=()=>{
+                    console.log(this);
+                };
+                adder();
+            }
+        };
+        fun.add(); //fun
+        const addFn=fun.add;
+        addFn();  //yndefinded->window
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.展开对象
+        // 对象不能直接展开，必须在{}中展开
+        const apple = {
+            color: '红',
+            shape: '球形',
+            taate: '甜'
+        };
+        // console.log(...apple);
+        // console.log([...apple]);
+        console.log({ ...apple });
+        console.log({ ...apple } === apple);   //false
+        // 2.合并对象
+        const apple1 = {
+            color: '红',
+            shape: '球形',
+            taate: '甜'
+        };
+        const pen = {
+            color: '黑',
+            shape: '圆柱形',
+            use: '写字'
+        };
+        console.log({...pen});
+        console.log({...apple1,...pen});
+        console.log({...pen,...apple1});
+    </script>
+</body>
+
+</html>

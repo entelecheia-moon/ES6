@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.方法
+
+        // add
+        const s = new Set();
+        // add可以连缀的去写
+        s.add(1).add(2);
+        console.log(s);
+        // has
+        console.log(s.has(1));
+        console.log(s.has(3));
+        // delete--删除不存在的成员,不会报错
+        s.delete(1);
+        console.log(s);
+        // clear--全部删除
+        s.clear();
+        console.log(s);
+        // forEach--用来遍历
+        s.add(1).add(2).add(3).add(4).add(5);
+        s.forEach(function(value,key,set){
+            // Set中value==key
+            console.log(value,key,set);
+            console.log(this);
+        });
+        console.log(s);
+        // 按照成员添加进集合的顺序遍历
+
+        // 2.属性
+        // size
+        console.log(s.size);
+    </script>
+</body>
+
+</html>

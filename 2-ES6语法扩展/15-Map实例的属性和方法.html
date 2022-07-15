@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.方法
+        // set
+        const m=new Map();
+        // 使用set添加的新成员,键如果已经纯在,后添加的键值对覆盖已有的
+        m.set('age',18).set(true,'true').set('age',20).set('sex','male');
+        console.log(m);
+        // get
+        console.log(m.get('age'));
+        // get获取不存在的成员,返回undefined
+        console.log(m.get('true'));
+        console.log(m.get(true));
+        // has
+        console.log(m.has('age'));
+        // delete
+        console.log(m.delete('age'));
+        console.log(m);
+        // forEach
+        m.forEach(function(value,key,map){
+            console.log(value,key,map===m);
+            console.log(this);
+        },document);
+
+        // 2.属性
+        // size
+        // 对象没有类似的属性
+        console.log(m.size);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.Map是什么？
+        // 映射
+        // Map和对象都是键值对的集合
+        // 键->值,key->value
+        const person={
+            name:'lihua',
+            age:18
+        };
+        console.log(person);
+
+        const m=new Map();
+        // Map可以用set添加
+        m.set('name','zhangsan');
+        m.set('age',18);
+        console.log(m);
+
+        // 2.Map和对象的区别
+        // 对象一般用字符串当作键
+        const obj={
+            name:'alex',
+            ture:'true',
+            [{}]:'object'
+        };
+        console.log(obj);
+        console.log({}.toString);
+        // 基本数据类型:数字,字符串,布尔值,undefined,null
+        // 引用数据类型:对象,([],{},函数,Set,Map等)
+        // 以上都可以作为Map的键
+        const map=new Map();
+        map.set('name','lihua');
+        map.set(true,'true');
+        map.set({},'object');
+        map.set(new Set([1,2]),'set');
+        map.set(undefined,'undefined');
+        console.log(map);
+    </script>
+</body>
+</html>

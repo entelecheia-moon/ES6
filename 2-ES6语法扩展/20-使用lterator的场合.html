@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 原生可遍历的
+        // Array数组
+        // String字符串
+        // Set
+        // Map
+        // 函数的arguments对象
+        // NodeList对象
+
+        // 这些可以进行一下操作
+
+        // 1.数组的展开运算符
+        console.log(...[1,2,3]);
+        console.log(1,2,3);
+        console.log(...'str');
+        console.log(...new Set([1,2,3]));
+        // console.log(...{});  
+
+        // 2.数组的解构赋值
+        const [a,b]=[1,2];
+        const [c,d]='hi';
+        const [e,f]=[...[3,4]];
+        const [g,h]=[...'ao'];
+        const [i,l]=[...new Set([5,6])];
+        console.log(a,b);
+        console.log(c,d);
+        console.log(e,f);
+        console.log(g,h);
+        console.log(i,l);
+
+        // 3.Set和Map的构造函数
+        // new Set(iterator);
+        // new Map(iterator);
+
+    </script>
+</body>
+</html>

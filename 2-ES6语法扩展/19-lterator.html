@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.lterator的作用
+        //lterator:遍历器(迭代器)
+        // for()
+        [1,2].forEach
+        new Set().forEach;
+        // lterator也是用来遍历的
+
+        // 2.寻找lterator
+        // console.log(lterator);
+        console.log([1,2][Symbol.iterator]());
+
+        const it=[1,2][Symbol.iterator]();
+        console.log(it);
+
+        // 3.使用lterator
+        const itt=[1,2][Symbol.iterator]();
+        console.log(itt.next());  //{value:1,done:false}
+        console.log(itt.next());  //{value:2,done:false}   
+        console.log(itt.next());  //{value:undefined,done:true}
+        console.log(itt.next());  //{value:undefined,done:true}
+        // 可以返回值,和done,如果是false则不是最后一个
+
+        // it:可遍历对象(可迭代对象)
+        // Symbol.iterator:可遍历对象的生成方法
+
+        // 4.什么是lteerator
+        // Symbol.iterator(可遍历对象的生成方法)  ->it (可遍历对象) ->it.next()->it.next()->...(直到done为true)
+    </script>
+</body>
+</html>

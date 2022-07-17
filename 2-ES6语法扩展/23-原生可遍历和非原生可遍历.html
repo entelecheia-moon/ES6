@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.什么是可遍历
+        // 只要有Symbol.iterator方法，并且这个方法可以生成可遍历对象，就是可遍历
+
+        // 原生可遍历的
+        // Array数组
+        // String字符串
+        // Set
+        // Map
+        // 函数的arguments对象
+        // NodeList对象
+
+        // 2.原生不可遍历的
+        // 一般对象
+        const person={sex:'male',age:18};
+        console.log(person[Symbol.iterator]);
+        // {next()}  {value,done}
+        person[Symbol.iterator]=()=>{
+            let index=0;
+            return{
+                next(){
+                    index++;
+                    if(index===1){
+                        return{
+                            value:person.age,
+                            done:false
+                        };
+                    }else if(index===2){
+                        return{
+                            value:person.sex,
+                            done:false
+                        };
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
